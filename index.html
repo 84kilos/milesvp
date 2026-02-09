@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Miles Phengsykeo</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" type="image/png" href="/webpage.png">
+  <!-- For Apple devices (e.g., iPhone home screen icon) -->
+  <link rel="apple-touch-icon" href="/webpage.png">
+</head>
+<body>
+
+  <div class="background"></div>
+  <div class="crt"></div>
+
+  <main class="container">
+    <div class="glass-container">
+    <h1>Miles Phengsykeo</h1>
+    <p class="role"><b>Junior Software Developer</b></p>
+    <p class="role"><b>MTSU Class of 2026</b></p>
+    <nav class="links">
+      <a href="https://github.com/84kilos" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/miles-phengsykeo-b0b12235a/" target="_blank">LinkedIn</a>
+      <a href="https://drive.google.com/file/d/1RtSZmDybUT4nQiZHs29GyWbUlNtDYazE/view?usp=drive_link" target="_blank">Resume</a>
+      <a href="#projects">Projects</a>
+      <a href="#email">Email</a>
+      <a href="#about">About</a>
+    </nav>
+    </div>
+  </main>
+
+  <!-- Projects Modal -->
+  <div id="projects" class="modal" style="display: flex; flex-direction: column; align-items: left; justify-content: center; padding: 17px; left: 19%; top: 50%; width: 600px; transform: translate(-50%, -50%) scale(1);">
+    <a href="#" class="close">×</a>
+    <div class="project-container">
+      <div class="project">
+        <img src="projects/ex.png">
+        <h4>Korean Learning App (2026)</h4>
+        <p>A Windows application built in C# for learning Korean words and pronunciation.</p>
+        <div class="tag-container">
+          <span class="tag">#CS</span>
+          <span class="tag">#GUI</span>
+          <span class="tag">#speech-recognition</span>
+          <span class="tag">#cloud-speech-api</span>
+        </div>
+      </div>
+      <div class="project">
+        <img src="projects/ex.png">
+        <h4>SoftwareDev Project (2026)</h4>
+        <p>yadayadayada yadayadayada yadayada ydadyadayada</p>
+        <div class="tag-container">
+          <span class="tag">#something</span>
+        </div>
+      </div>
+    </div>
+    <div class="project-container">
+      <div class="project">
+        <img src="projects/conn4.png">
+        <h4>Networked Connect 4 (2024)</h4>
+        <p>A multiplayer version of Connect 4 playable directly from the terminal.</p>
+        <div class="tag-container">
+          <span class="tag">#python</span>
+          <span class="tag">#sockets</span>
+          <span class="tag">#game</span>
+          <span class="tag">#multiplayer</span>
+        </div>
+      </div>
+      <div class="project">
+        <img src="projects/logi.png">
+        <h4>16-Bit Logisim CPU (2024)</h4>
+        <p>A functioning 16-bit CPU built in Logisim. With exponent program in assembly.</p>
+        <div class="tag-container">
+          <span class="tag">#logisim</span>
+          <span class="tag">#assembly</span>
+          <span class="tag">#computer-design</span>
+          <span class="tag">#NASM</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Email Modal -->
+  <div id="email" class="modal" style="display: flex; align-items: center; justify-content: center; padding: 17px; left: 50%; top: 67%; width: 350px; transform: translate(-50%, -50%) scale(1);">
+    <a href="#" class="close">×</a>
+    <p id="textToCopy"> milesphengsykeo@gmail.com </p>
+    <button id="copyBtn" aria-label="Copy email">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff" height="800px" width="800px" version="1.1" id="Layer_1" viewBox="0 0 460 460" xml:space="preserve">
+        <g>
+          <g>
+            <g>
+              <path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729     c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"/>
+              <path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272     c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068     c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001     C291.206,428.715,289.92,430,288.341,430z"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </button>
+  </div>
+
+  <div class="modal" id="copyModal" style="display: flex; align-items: center; justify-content: center; padding: 18px; width: 150px; left: 50%; top: 75%;">
+    <p>Text Copied</p>
+  </div>
+
+  <!-- About Panel -->
+  <div id="about" class="modal">
+    <a href="#" class="close">×</a>
+    <h2>About Me</h2>
+    <p>
+      I’m a software developer focused on making clean and efficient programming solutions.
+      I have experience in a variety of programming languages, and I’m always eager to learn new technologies and improve my skills.
+      I've self-taught myself different tools and languages as I've needed them and feel I can finish anything I set my mind to.
+    </p>
+    <h3 style="margin-top: 1rem;">Background</h3>
+    <p>
+      I graduate from MTSU in 2026 with a major in Computer Science and minors in Mathematics and Japanese.
+      I have experience working on various projects, including a mobile application and several other web applications.
+    </p>
+    <h3 style="margin-top: 1rem;">Skills</h3>
+    <div class="skill-container">
+      <ul class="skills">
+        <h4>Languages</h4>
+        <li>Python</li>
+        <li>C/C++/C#</li>
+        <li>JavaScript</li>
+        <li>HTML/CSS</li>
+        </li>
+      </ul>
+      <ul class="skills">
+        <h4>Technical Skills</h4>
+        <li>Blender</li>
+        <li>Unreal Engine 5</li>
+        <li>Adobe Premiere</li>
+        <li>Adobe Photoshop</li>
+      </ul>
+    </div>
+  </div>
+  <footer>
+    <p>© 2026 Miles Phengsykeo. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
