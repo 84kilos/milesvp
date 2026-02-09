@@ -209,7 +209,35 @@ h1 {
   background: transparent;              /* invisible track */
 }
 
+.modal.projects{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  padding: 17px;
+  left: 19%;
+  top: 50%;
+  width: 600px;
+  transform: translate(-50%, -50%) scale(1);
+}
 
+.modal.email{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 17px; left: 50%;
+  top: 67%; width: 350px;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal.copy{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px; width: 150px;
+  left: 50%;
+  top: 75%;
+}
 
 .glass-container{
     padding: 20px;
@@ -325,8 +353,13 @@ h1 {
         overflow-y: auto; /* Allows scrolling for long content [4] */
     }
 
+    footer{
+      visibility: hidden;
+    }
+
     .container {
         height: auto; /* Allows content to expand vertically [4] */
+        margin-top: 20%;
         padding: 40px 20px;
     }
 
@@ -348,10 +381,23 @@ h1 {
 
     /* 3. Center and resize the Modals */
     .modal {
-      top: 50%;
+      top: 65dvh;
       transform: translate(-50%, -50%) scale(1);
       padding: 1.5rem;
       border-radius: 16px;
+      left: 50%;
+    }
+
+    .modal.email{
+      top: 35dvh;
+    }
+    .modal.copy{
+      top: 45dvh;
+    }
+
+    .modal.projects{
+      left: 50%;
+      margin-top: 45dvh;
     }
 
     /* 4. Stack Projects vertically instead of horizontally */
