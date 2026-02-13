@@ -2,28 +2,68 @@ const button = document.getElementById("copyBtn");
 const text = document.getElementById("textToCopy");
 const modal = document.getElementById("copyModal");
 
-button.addEventListener("click", () => {
-  navigator.clipboard.writeText(text.innerText)
-    .then(() => {
-      setTimeout(() => {}, 1500);
-    })
-    .catch(err => {
-      console.error("Failed to copy text: ", err);});
-});
+function fallbackCopy(value) {
+  const textarea = document.createElement("textarea");
+  textarea.value = value;
+  textarea.setAttribute("readonly", "");
+  textarea.style.position = "fixed";
+  textarea.style.opacity = "0";
+  textarea.style.pointerEvents = "none";
 
-button.addEventListener("click", () => {
-  // Copy text to clipboard
-  navigator.clipboard.writeText(text.innerText).then(() => {
-    
-    // Show modal
-    modal.classList.add("show");
+  document.body.appendChild(textarea);
+  textarea.focus();
+  textarea.select();
 
-    // Hide modal after 1.5 seconds
-    setTimeout(() => {
-      modal.classList.remove("show");
-    }, 1500);
-    
-  }).catch(err => {
-    console.error("Copy failed:", err);
+  let copied = false;
+  try {
+    copied = document.execCommand("copy");
+  } catch (error) {
+    copied = false;
+  }
+
+  document.body.removeChild(textarea);
+  return copied;
+}
+
+async function copyEmail(value) {
+  if (navigator.clipboard && window.isSecureContext) {
+    await navigator.clipboard.writeText(value);
+    return true;
+  }
+
+  return fallbackCopy(value);
+}
+
+function showCopyModal(message) {
+  if (!modal) return;
+
+  const textNode = modal.querySelector("p");
+  if (textNode) {
+    textNode.textContent = message;
+  }
+
+  modal.classList.add("show");
+  setTimeout(() => {
+    modal.classList.remove("show");
+  }, 1500);
+}
+
+if (button && text) {
+  button.addEventListener("click", async (event) => {
+    event.preventDefault();
+
+    const value = text.textContent.trim();
+    if (!value) {
+      showCopyModal("No text to copy");
+      return;
+    }
+
+    try {
+      const copied = await copyEmail(value);
+      showCopyModal(copied ? "Text Copied" : "Copy failed");
+    } catch (error) {
+      console.error("Copy failed:", error);
+      showCopyModal("Copy failed");
+    }
   });
-});
+}
