@@ -29,6 +29,11 @@ p{
   align-items: center;
 }
 
+a{
+  font-size: 0.8rem;
+  color: #50F3A7; 
+}
+
 h1 {
   font-size: 2.4rem;
   font-weight: 500;
